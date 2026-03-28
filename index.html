@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ritesh — Portfolio</title>
+  <meta name="description" content="Personal portfolio of Ritesh — AI & Data Science Engineer. Explore my projects, skills, and experience." />
+  <link rel="stylesheet" href="style.css" />
+  <noscript><style>.reveal { opacity:1 !important; transform:none !important; }</style></noscript>
+  <script>
+    (function() {
+      try { var t = localStorage.getItem('portfolio-theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch(e) {}
+    })();
+  </script>
+</head>
+<body>
+  <!-- ═══════════════════ PAGE TRANSITION OVERLAY ═══════════════════ -->
+  <div class="page-transition-overlay" id="page-transition-overlay" aria-hidden="true">
+    <div class="pt-panel"></div>
+    <div class="pt-panel"></div>
+    <div class="pt-panel"></div>
+  </div>
+
+  <!-- ═══════════════════ NAVBAR ═══════════════════ -->
+  <nav class="navbar" id="navbar">
+    <a href="#hero" class="nav-logo">R<span class="logo-dot">.</span></a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#hero" class="nav-link active">Home</a></li>
+      <li><a href="#experience" class="nav-link">Experience</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle dark/light theme">
+        <svg class="icon icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════ HERO ═══════════════════ -->
+  <section class="hero" id="hero">
+    <!-- Floating Lines Background -->
+    <canvas class="floating-lines-bg" id="floating-lines-bg"></canvas>
+    
+    <div class="hero-bg-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-text">
+        <p class="hero-greeting">Hello, I'm</p>
+        <h1 class="hero-name">Ritesh</h1>
+        <p class="hero-title">
+          <span class="typed-text" id="typed-text"></span>
+        </p>
+        <p class="hero-desc">Aspiring AI &amp; Data Science Engineer, passionate about Deep Learning, NLP, LLMs, and intelligent system development. I enjoy building data-driven, AI-powered applications and fine-tuning models to solve impactful problems.</p>
+        <div class="hero-stats reveal-children">
+          <div class="stat">
+            <span class="stat-number">+10</span>
+            <span class="stat-label">Projects</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">+2</span>
+            <span class="stat-label">Years Exp.</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">+5</span>
+            <span class="stat-label">Technologies</span>
+          </div>
+        </div>
+        <div class="hero-cta reveal-children">
+          <a href="#contact" class="btn btn-primary">Get In Touch</a>
+          <a href="#projects" class="btn btn-outline">View My Work</a>
+          <a href="https://drive.google.com/file/d/1ese-onfcyB16KJ8HMXHT50n4_fVzVFtv/view?usp=sharing" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download CV
+          </a>
+        </div>
+        <div class="hero-socials">
+          <a style="cursor: pointer;" tabindex="0" onclick="window.open('https://github.com/Riteshhpawar23', '_blank')" aria-label="GitHub" title="GitHub"><svg class="icon" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+          <a style="cursor: pointer;" tabindex="0" onclick="window.open('https://www.linkedin.com/feed/', '_blank')" aria-label="LinkedIn" title="LinkedIn"><svg class="icon" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a style="cursor: pointer;" tabindex="0" onclick="window.location.href='mailto:riteshhpawar23@gmail.com'" aria-label="Email" title="Email"><svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+          <a style="cursor: pointer;" tabindex="0" onclick="window.open('https://leetcode.com/u/riteshhpawa23/', '_blank')" aria-label="LeetCode" title="LeetCode"><svg class="icon" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></a>
+        </div>
+      </div>
+      <div class="hero-profile">
+        <div class="hero-profile-ring">
+          <img src="unnamed.jpg" alt="Ritesh — Profile Photo" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ EXPERIENCE ═══════════════════ -->
+  <section class="section experience" id="experience">
+    <!-- Floating Lines Background -->
+    <canvas class="floating-lines-bg"></canvas>
+    <div class="container">
+      <h2 class="section-title reveal">My <span class="highlight">Experience</span></h2>
+      <div class="experience-layout">
+        <!-- CPU Architecture Visualization (Left Side) -->
+        <div class="experience-visual reveal reveal-left">
+          <svg
+            class="cpu-architecture-svg"
+            width="100%"
+            height="100%"
+            viewBox="0 0 200 100"
+            style="color: var(--text-secondary); filter: drop-shadow(0 0 10px rgba(0,0,0,0.1));"
+          >
+            <!-- Paths -->
+            <g
+              stroke="currentColor"
+              fill="none"
+              stroke-width="0.3"
+              stroke-dasharray="100 100"
+              pathLength="100"
+              marker-start="url(#cpu-circle-marker)"
+            >
+              <path stroke-dasharray="100 100" pathLength="100" d="M 10 20 h 79.5 q 5 0 5 5 v 30" />
+              <path stroke-dasharray="100 100" pathLength="100" d="M 180 10 h -69.7 q -5 0 -5 5 v 30" />
+              <path d="M 130 20 v 21.8 q 0 5 -5 5 h -10" />
+              <path d="M 170 80 v -21.8 q 0 -5 -5 -5 h -50" />
+              <path stroke-dasharray="100 100" pathLength="100" d="M 135 65 h 15 q 5 0 5 5 v 10 q 0 5 -5 5 h -39.8 q -5 0 -5 -5 v -20" />
+              <path d="M 94.8 95 v -36" />
+              <path d="M 88 88 v -15 q 0 -5 -5 -5 h -10 q -5 0 -5 -5 v -5 q 0 -5 5 -5 h 14" />
+              <path d="M 30 30 h 25 q 5 0 5 5 v 6.5 q 0 5 5 5 h 20" />
+              <!-- Animation For Path Starting -->
+              <animate attributeName="stroke-dashoffset" from="100" to="0" dur="1s" fill="freeze" calcMode="spline" keySplines="0.25,0.1,0.5,1" keyTimes="0; 1" />
+            </g>
+
+            <!-- Light Nodes -->
+            <g mask="url(#cpu-mask-1)"><circle class="cpu-architecture cpu-line-1" cx="0" cy="0" r="14" fill="url(#cpu-blue-grad)"><animateMotion dur="4s" repeatCount="indefinite" path="M 10 20 h 79.5 q 5 0 5 5 v 24" /></circle></g>
+            <g mask="url(#cpu-mask-2)"><circle class="cpu-architecture cpu-line-2" cx="0" cy="0" r="14" fill="url(#cpu-yellow-grad)"><animateMotion dur="5s" repeatCount="indefinite" path="M 180 10 h -69.7 q -5 0 -5 5 v 24" /></circle></g>
+            <g mask="url(#cpu-mask-3)"><circle class="cpu-architecture cpu-line-3" cx="0" cy="0" r="14" fill="url(#cpu-pinkish-grad)"><animateMotion dur="3.5s" repeatCount="indefinite" path="M 130 20 v 21.8 q 0 5 -5 5 h -10" /></circle></g>
+            <g mask="url(#cpu-mask-4)"><circle class="cpu-architecture cpu-line-4" cx="0" cy="0" r="14" fill="url(#cpu-white-grad)"><animateMotion dur="4.5s" repeatCount="indefinite" path="M 170 80 v -21.8 q 0 -5 -5 -5 h -50" /></circle></g>
+            <g mask="url(#cpu-mask-5)"><circle class="cpu-architecture cpu-line-5" cx="0" cy="0" r="14" fill="url(#cpu-green-grad)"><animateMotion dur="6s" repeatCount="indefinite" path="M 135 65 h 15 q 5 0 5 5 v 10 q 0 5 -5 5 h -39.8 q -5 0 -5 -5 v -20" /></circle></g>
+            <g mask="url(#cpu-mask-6)"><circle class="cpu-architecture cpu-line-6" cx="0" cy="0" r="14" fill="url(#cpu-orange-grad)"><animateMotion dur="3s" repeatCount="indefinite" path="M 94.8 95 v -36" /></circle></g>
+            <g mask="url(#cpu-mask-7)"><circle class="cpu-architecture cpu-line-7" cx="0" cy="0" r="14" fill="url(#cpu-cyan-grad)"><animateMotion dur="5.5s" repeatCount="indefinite" path="M 88 88 v -15 q 0 -5 -5 -5 h -10 q -5 0 -5 -5 v -5 q 0 -5 5 -5 h 14" /></circle></g>
+            <g mask="url(#cpu-mask-8)"><circle class="cpu-architecture cpu-line-8" cx="0" cy="0" r="14" fill="url(#cpu-rose-grad)"><animateMotion dur="4s" repeatCount="indefinite" path="M 30 30 h 25 q 5 0 5 5 v 6.5 q 0 5 5 5 h 20" /></circle></g>
+
+            <!-- CPU Box -->
+            <g>
+              <!-- Cpu connections -->
+              <g fill="url(#cpu-connection-gradient)">
+                <rect x="93" y="37" width="2.5" height="5" rx="0.7" />
+                <rect x="104" y="37" width="2.5" height="5" rx="0.7" />
+                <rect x="116.3" y="44" width="2.5" height="5" rx="0.7" transform="rotate(90 116.25 45.5)" />
+                <rect x="122.8" y="44" width="2.5" height="5" rx="0.7" transform="rotate(90 116.25 45.5)" />
+                <rect x="104" y="16" width="2.5" height="5" rx="0.7" transform="rotate(180 105.25 39.5)" />
+                <rect x="114.5" y="16" width="2.5" height="5" rx="0.7" transform="rotate(180 105.25 39.5)" />
+                <rect x="80" y="-13.6" width="2.5" height="5" rx="0.7" transform="rotate(270 115.25 19.5)" />
+                <rect x="87" y="-13.6" width="2.5" height="5" rx="0.7" transform="rotate(270 115.25 19.5)" />
+              </g>
+              <!-- 3D Extrusion base (Shadow + side depth) -->
+              <rect x="85" y="42" width="30" height="20" rx="2.5" fill="#080808" filter="url(#cpu-light-shadow)" />
+              <!-- Top Raised Chip Surface -->
+              <rect x="85" y="39.5" width="30" height="20" rx="2" fill="#181818" stroke="#3d3d3d" stroke-width="0.3" />
+              <!-- Text on elevated surface -->
+              <text x="94.5" y="52" font-size="7" fill="url(#cpu-text-gradient)" font-weight="600" letter-spacing="0.05em">AI</text>
+            </g>
+
+            <!-- Masks & Gradients -->
+            <defs>
+              <mask id="cpu-mask-1"><path d="M 10 20 h 79.5 q 5 0 5 5 v 24" stroke-width="1.5" stroke="white" /></mask>
+              <mask id="cpu-mask-2"><path d="M 180 10 h -69.7 q -5 0 -5 5 v 24" stroke-width="1.5" stroke="white" /></mask>
+              <mask id="cpu-mask-3"><path d="M 130 20 v 21.8 q 0 5 -5 5 h -10" stroke-width="1.5" stroke="white" /></mask>
+              <mask id="cpu-mask-4"><path d="M 170 80 v -21.8 q 0 -5 -5 -5 h -50" stroke-width="1.5" stroke="white" /></mask>
+              <mask id="cpu-mask-5"><path d="M 135 65 h 15 q 5 0 5 5 v 10 q 0 5 -5 5 h -39.8 q -5 0 -5 -5 v -20" stroke-width="1.5" stroke="white" /></mask>
+              <mask id="cpu-mask-6"><path d="M 94.8 95 v -36" stroke-width="1.5" stroke="white" /></mask>
+              <mask id="cpu-mask-7"><path d="M 88 88 v -15 q 0 -5 -5 -5 h -10 q -5 0 -5 -5 v -5 q 0 -5 5 -5 h 14" stroke-width="1.5" stroke="white" /></mask>
+              <mask id="cpu-mask-8"><path d="M 30 30 h 25 q 5 0 5 5 v 6.5 q 0 5 5 5 h 20" stroke-width="1.5" stroke="white" /></mask>
+              
+              <radialGradient id="cpu-blue-grad" fx="1"><stop offset="0%" stop-color="#00E8ED"/><stop offset="50%" stop-color="#08F"/><stop offset="100%" stop-color="transparent"/></radialGradient>
+              <radialGradient id="cpu-yellow-grad" fx="1"><stop offset="0%" stop-color="#FFD800"/><stop offset="50%" stop-color="#FFD800"/><stop offset="100%" stop-color="transparent"/></radialGradient>
+              <radialGradient id="cpu-pinkish-grad" fx="1"><stop offset="0%" stop-color="#830CD1"/><stop offset="50%" stop-color="#FF008B"/><stop offset="100%" stop-color="transparent"/></radialGradient>
+              <radialGradient id="cpu-white-grad" fx="1"><stop offset="0%" stop-color="white"/><stop offset="100%" stop-color="transparent"/></radialGradient>
+              <radialGradient id="cpu-green-grad" fx="1"><stop offset="0%" stop-color="#22c55e"/><stop offset="100%" stop-color="transparent"/></radialGradient>
+              <radialGradient id="cpu-orange-grad" fx="1"><stop offset="0%" stop-color="#f97316"/><stop offset="100%" stop-color="transparent"/></radialGradient>
+              <radialGradient id="cpu-cyan-grad" fx="1"><stop offset="0%" stop-color="#06b6d4"/><stop offset="100%" stop-color="transparent"/></radialGradient>
+              <radialGradient id="cpu-rose-grad" fx="1"><stop offset="0%" stop-color="#f43f5e"/><stop offset="100%" stop-color="transparent"/></radialGradient>
+              
+              <filter id="cpu-light-shadow" x="-50%" y="-50%" width="200%" height="200%">
+                <feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="black" flood-opacity="0.6" />
+                <feDropShadow dx="0" dy="1" stdDeviation="0.5" flood-color="black" flood-opacity="0.8" />
+              </filter>
+              
+              <marker id="cpu-circle-marker" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="18" markerHeight="18">
+                <circle id="innerMarkerCircle" cx="5" cy="5" r="2" fill="black" stroke="#232323" stroke-width="0.5">
+                  <animate attributeName="r" values="0; 3; 2" dur="0.5s" />
+                </circle>
+              </marker>
+              
+              <linearGradient id="cpu-connection-gradient" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#4F4F4F" /><stop offset="60%" stop-color="#121214" />
+              </linearGradient>
+              
+              <linearGradient id="cpu-text-gradient" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#666666"><animate attributeName="offset" values="-2; -1; 0" dur="5s" repeatCount="indefinite" calcMode="spline" keyTimes="0; 0.5; 1" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" /></stop>
+                <stop offset="25%" stop-color="white"><animate attributeName="offset" values="-1; 0; 1" dur="5s" repeatCount="indefinite" calcMode="spline" keyTimes="0; 0.5; 1" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" /></stop>
+                <stop offset="50%" stop-color="#666666"><animate attributeName="offset" values="0; 1; 2;" dur="5s" repeatCount="indefinite" calcMode="spline" keyTimes="0; 0.5; 1" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" /></stop>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+
+        <!-- Experience Timeline (Right Side) -->
+        <div class="timeline reveal reveal-right">
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">Jul 2025 – Present</span>
+              <h3>AI Engineer Intern</h3>
+              <h4>Health First Priority</h4>
+              <ul>
+                <li>Fine-tuned LLMs using QLoRA &amp; quantization for efficient local deployment.</li>
+                <li>Built robust RAG pipelines using LangChain &amp; Haystack.</li>
+                <li>Researched federated learning &amp; P2P architectures for distributed training.</li>
+                <li>Streamlined CI/CD testing &amp; Linux performance optimization.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">Aug 2025</span>
+              <h3>On-Site Field Engagement</h3>
+              <h4>Indian Army (Artillery Brigade)</h4>
+              <ul>
+                <li>Developed a Defense Equipment Management Dashboard using Power BI.</li>
+                <li>Worked on real-world defense data and contributed to mission-oriented problem solving.</li>
+                <li>Collaborated with military personnel and engineering teams for data-driven insights.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ SKILLS ═══════════════════ -->
+  <section class="section skills" id="skills">
+    <div class="container">
+      <h2 class="section-title reveal">My <span class="highlight">Skills</span></h2>
+      <p class="section-subtitle reveal">Technologies and tools I work with</p>
+      <div class="skills-scroller">
+        <div class="skills-track reveal">
+          <!-- CARD SET 1 -->
+          <div class="skill-card">
+            <div class="skill-icon"><img src="logo/Linux-icon-design-on-transparent-background-PNG.png" alt="Linux Logo" /></div>
+            <h4>Linux</h4>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon"><img src="logo/PyTorch.png" alt="PyTorch Logo" /></div>
+            <h4>PyTorch</h4>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon"><img src="logo/TensorFlow.png" alt="TensorFlow Logo" /></div>
+            <h4>TensorFlow</h4>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon"><img src="logo/logo-logo-git-line-cheat-sheet-signage-cheating-mug-png-clipart.jpg" alt="Git Logo" /></div>
+            <h4>Git</h4>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon"><img src="logo/flask-python-web-framework-representational-state-transfer-software-framework-flask-python.jpg" alt="Flask Logo" /></div>
+            <h4>Flask</h4>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon"><img src="logo/62a9c7c08ff6441a2952dad3.png" alt="Docker Logo" /></div>
+            <h4>Docker</h4>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon"><img src="logo/1_7Zx5IHNiz3U7GZ64wEuESg.png" alt="Langchain Logo" /></div>
+            <h4>LangChain</h4>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon"><img src="logo/ca69ef9d3c27653cd1e0e0e193b7fe65.png" alt="Power BI Logo" /></div>
+            <h4>Power BI</h4>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon"><img src="logo/images.png" alt="Python Logo" /></div>
+            <h4>Python</h4>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon"><img src="logo/images (1).png" alt="Django Logo" /></div>
+            <h4>Django</h4>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon"><img src="logo/images (2).png" alt="MySQL Logo" /></div>
+            <h4>MySQL</h4>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon"><img src="logo/images (3).png" alt="GitHub Logo" /></div>
+            <h4>GitHub</h4>
+          </div>
+          
+          <!-- CARD SET 2 (DUPLICATE FOR LOOP) -->
+          <div class="skill-card">
+            <div class="skill-icon"><img src="logo/Linux-icon-design-on-transparent-background-PNG.png" alt="Linux Logo" /></div>
+            <h4>Linux</h4>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon"><img src="logo/PyTorch.png" alt="PyTorch Logo" /></div>
+            <h4>PyTorch</h4>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon"><img src="logo/TensorFlow.png" alt="TensorFlow Logo" /></div>
+            <h4>TensorFlow</h4>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon"><img src="logo/logo-logo-git-line-cheat-sheet-signage-cheating-mug-png-clipart.jpg" alt="Git Logo" /></div>
+            <h4>Git</h4>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon"><img src="logo/flask-python-web-framework-representational-state-transfer-software-framework-flask-python.jpg" alt="Flask Logo" /></div>
+            <h4>Flask</h4>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon"><img src="logo/62a9c7c08ff6441a2952dad3.png" alt="Python Logo" /></div>
+            <h4>Python</h4>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon"><img src="logo/1_7Zx5IHNiz3U7GZ64wEuESg.png" alt="Pandas Logo" /></div>
+            <h4>Pandas</h4>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon"><img src="logo/ca69ef9d3c27653cd1e0e0e193b7fe65.png" alt="Scikit-Learn Logo" /></div>
+            <h4>Scikit-Learn</h4>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon"><img src="logo/images.png" alt="SQL Logo" /></div>
+            <h4>SQL / MySQL</h4>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon"><img src="logo/images (1).png" alt="Docker Logo" /></div>
+            <h4>Docker</h4>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon"><img src="logo/images (2).png" alt="Langchain Logo" /></div>
+            <h4>Langchain</h4>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon"><img src="logo/images (3).png" alt="Haystack Logo" /></div>
+            <h4>Haystack</h4>
+          </div>
+        </div>
+      </div>
+      
+      <div class="neural-network reveal" id="neural-net">
+        <canvas class="nn-canvas" id="nn-canvas"></canvas>
+        
+        <div class="nn-layer" data-layer="1">
+          <div class="nn-node">
+            <h4>💻 Programming</h4>
+            <div class="node-pills">
+              <span>Python</span><span>SQL</span><span>Java (Basic)</span>
+            </div>
+          </div>
+          <div class="nn-node">
+            <h4>🗄️ Databases</h4>
+            <div class="node-pills">
+              <span>MySQL</span><span>PL/SQL (Basics)</span>
+            </div>
+          </div>
+          <div class="nn-node">
+            <h4>⚙️ Tools &amp; Tech</h4>
+            <div class="node-pills">
+              <span>Git/GitHub</span><span>Docker</span><span>Power BI</span><span>Linux</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="nn-layer" data-layer="2">
+          <div class="nn-node">
+            <h4>📚 Frameworks</h4>
+            <div class="node-pills">
+              <span>TensorFlow</span><span>PyTorch</span><span>Scikit-learn</span><span>Pandas</span><span>NumPy</span><span>LangChain</span><span>Haystack</span>
+            </div>
+          </div>
+          <div class="nn-node">
+            <h4>🌐 Backend</h4>
+            <div class="node-pills">
+              <span>Django</span><span>DRF</span><span>Flask</span><span>REST APIs</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="nn-layer" data-layer="3">
+          <div class="nn-node output-node">
+            <h4>🧠 AI / Machine Learning</h4>
+            <div class="node-pills">
+              <span>Machine Learning</span><span>Deep Learning</span><span>NLP</span><span>LLMs</span><span>RAG</span><span>Fine-tuning (QLoRA)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- ═══════════════════ PROJECTS ═══════════════════ -->
+  <section class="section projects" id="projects">
+    <div class="container">
+      <h2 class="section-title reveal">My <span class="highlight">Projects</span></h2>
+      <p class="section-subtitle reveal">A selection of things I've built</p>
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <div class="project-card reveal">
+          <div class="project-image">
+            <div class="project-placeholder"><svg class="icon" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></div>
+            <div class="project-overlay">
+              <a href="#" class="project-link" aria-label="Live Demo"><svg class="icon" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+              <a href="#" class="project-link" aria-label="GitHub"><svg class="icon" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>E-Commerce Platform</h3>
+            <p>Full-stack online store with cart, payments, and admin dashboard.</p>
+            <div class="project-tags">
+              <span>React</span><span>Node.js</span><span>MongoDB</span>
+            </div>
+          </div>
+        </div>
+        <!-- Project 2 -->
+        <div class="project-card reveal">
+          <div class="project-image">
+            <div class="project-placeholder"><svg class="icon" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
+            <div class="project-overlay">
+              <a href="#" class="project-link" aria-label="Live Demo"><svg class="icon" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+              <a href="#" class="project-link" aria-label="GitHub"><svg class="icon" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Real-Time Chat App</h3>
+            <p>Instant messaging with rooms, typing indicators, and media sharing.</p>
+            <div class="project-tags">
+              <span>Socket.IO</span><span>Express</span><span>React</span>
+            </div>
+          </div>
+        </div>
+        <!-- Project 3 -->
+        <div class="project-card reveal">
+          <div class="project-image">
+            <div class="project-placeholder"><svg class="icon" viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></div>
+            <div class="project-overlay">
+              <a href="#" class="project-link" aria-label="Live Demo"><svg class="icon" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+              <a href="#" class="project-link" aria-label="GitHub"><svg class="icon" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Weather Dashboard</h3>
+            <p>7-day forecasts with interactive maps and location search.</p>
+            <div class="project-tags">
+              <span>JavaScript</span><span>API</span><span>CSS</span>
+            </div>
+          </div>
+        </div>
+        <!-- Project 4 -->
+        <div class="project-card reveal">
+          <div class="project-image">
+            <div class="project-placeholder"><svg class="icon" viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+            <div class="project-overlay">
+              <a href="#" class="project-link" aria-label="Live Demo"><svg class="icon" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+              <a href="#" class="project-link" aria-label="GitHub"><svg class="icon" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Task Manager Pro</h3>
+            <p>Kanban board with drag-and-drop, priorities, and team collaboration.</p>
+            <div class="project-tags">
+              <span>React</span><span>Firebase</span><span>DnD</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════ CONTACT ═══════════════════ -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <h2 class="section-title reveal">Get In <span class="highlight">Touch</span></h2>
+      <p class="section-subtitle reveal">Have a project in mind? Let's work together!</p>
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <div class="contact-item">
+            <div class="contact-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+            <div>
+              <h4>Email</h4>
+              <p><a href="mailto:riteshhpawar23@gmail.com" style="color:inherit;">riteshhpawar23@gmail.com</a></p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div>
+              <h4>Location</h4>
+              <p>Navi Mumbai, India</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+            <div>
+              <h4>Phone</h4>
+              <p><a href="tel:+919403383846" style="color:inherit;">+91 9403383846</a></p>
+            </div>
+          </div>
+          <div class="contact-socials">
+            <a style="cursor: pointer;" tabindex="0" onclick="window.open('https://github.com/Riteshhpawar23', '_blank')" aria-label="GitHub" title="GitHub"><svg class="icon" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+            <a style="cursor: pointer;" tabindex="0" onclick="window.open('https://www.linkedin.com/feed/', '_blank')" aria-label="LinkedIn" title="LinkedIn"><svg class="icon" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+            <a style="cursor: pointer;" tabindex="0" onclick="window.location.href='mailto:riteshhpawar23@gmail.com'" aria-label="Email" title="Email"><svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+            <a style="cursor: pointer;" tabindex="0" onclick="window.open('https://leetcode.com/u/riteshhpawa23/', '_blank')" aria-label="LeetCode" title="LeetCode"><svg class="icon" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></a>
+          </div>
+        </div>
+        <form class="contact-form reveal" id="contact-form" action="https://formspree.io/f/xbdpdpdp" method="POST">
+          <input type="hidden" name="_subject" value="New message from Portfolio Contact Form" />
+          <div class="form-group">
+            <input type="text" id="name" name="name" placeholder="Your Name" required />
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" name="email" placeholder="Your Email" required />
+          </div>
+          <div class="form-group">
+            <input type="text" id="subject" name="subject" placeholder="Subject" />
+          </div>
+          <div class="form-group">
+            <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">
+            <span>Send Message</span>
+            <svg class="icon" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ FOOTER ═══════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 <span class="highlight">Ritesh</span>. All rights reserved.</p>
+      <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <svg class="icon" viewBox="0 0 24 24"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+      </button>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
