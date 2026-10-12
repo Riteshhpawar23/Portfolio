@@ -157,10 +157,10 @@
 
   // ─── Typing Effect ───────────────────────────────
   const titles = [
-    'AI & Data Science Enthusiast',
-    'Deep Learning & NLP Engineer',
-    'LLM Fine-Tuning Specialist',
-    'Django & Flask Developer'
+    'AI Engineer',
+    'AI & Data Science Engineer',
+    'AI Agents & LLM Specialist',
+    'Deep Learning & NLP Engineer'
   ];
   let titleIndex = 0;
   let charIndex = 0;
