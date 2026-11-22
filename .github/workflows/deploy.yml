@@ -39,5 +39,9 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      # While Pages is set to "Deploy from a branch", GitHub also publishes the raw files.
+      # The last deploy wins, so this one waits. Remove this step once Source is "GitHub Actions".
+      - name: Let GitHub's branch deploy finish first
+        run: sleep 100
       - id: deployment
         uses: actions/deploy-pages@v5
