@@ -833,105 +833,236 @@ img { max-width:100%; display:block; }
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-auto-rows: 1fr;
+  gap: 20px;
 }
 
+.projects-grid > :nth-child(4) { grid-column: 2 / span 2; }
+
+/* The edge lights up around the cursor */
 .project-card {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  overflow: hidden;
-  transition: all .35s;
-  box-shadow: var(--card-shadow);
-}
-
-.project-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 16px 45px var(--accent-glow);
-  border-color: var(--accent);
-}
-
-.project-image {
+  --x: 50%;
+  --y: 50%;
+  --edge: transparent;
   position: relative;
-  height: 220px;
+  display: flex;
+  flex-direction: column;
+  grid-column: span 2;
+  min-width: 0;
+  min-height: 322px;
   overflow: hidden;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  background:
+    linear-gradient(var(--card-bg), var(--card-bg)) padding-box,
+    radial-gradient(240px circle at var(--x) var(--y), var(--edge), transparent 75%) border-box,
+    linear-gradient(var(--border), var(--border)) border-box;
+  box-shadow: 0 1px 2px rgba(0,0,0,.04), 0 12px 28px -20px rgba(0,0,0,.35);
 }
 
-.project-placeholder {
-  width:100%; height:100%;
-  background: var(--bg-tertiary);
-  display: grid;
-  place-items: center;
-  font-size: 3.5rem;
-  color: var(--text-secondary);
-  transition: transform .5s;
+/* Each project has its own colour */
+.project-kuro    { --cover: #f8f0df; }
+.project-store   { --cover: #234238; }
+.project-chat    { --cover: #233247; }
+.project-weather { --cover: #31566d; }
+.project-board   { --cover: #73402f; }
+
+.project-visual {
+  position: relative;
+  flex: none;
+  height: 156px;
+  overflow: hidden;
+  background: var(--cover);
 }
 
-.project-card:hover .project-placeholder { transform: scale(1.05); }
-
-.project-cover {
-  width:100%; height:100%;
-  padding: 8px;
-  object-fit: contain;
-  background: #f8f0df; /* same cream as the logo */
-  transition: transform .5s;
-}
-
-.project-card:hover .project-cover { transform: scale(1.05); }
-
-.project-overlay {
+.project-art {
   position: absolute;
   inset: 0;
-  background: var(--overlay-bg);
+  width: 100%;
+  height: 100%;
+}
+
+.project-art g { transition: transform .6s cubic-bezier(.2,.8,.2,1); }
+
+.project-visual img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: 10px 8px 4px;
+  object-fit: contain;
+  transition: transform .6s cubic-bezier(.2,.8,.2,1);
+}
+
+/* Notched tab, cut out of the cover */
+.project-type {
+  --notch: 14px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 5px 13px 7px 17px;
+  border-bottom-right-radius: var(--notch);
+  background: var(--card-bg);
+  color: var(--text-primary);
+  font-size: .66rem;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.project-type::before,
+.project-type::after {
+  content: "";
+  position: absolute;
+  width: var(--notch);
+  height: var(--notch);
+  background: radial-gradient(circle at 100% 100%, transparent calc(var(--notch) - .5px), var(--card-bg) var(--notch));
+}
+
+.project-type::before { top: 0; left: 100%; }
+.project-type::after  { top: 100%; left: 0; }
+
+.project-info {
+  flex: 1;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  opacity: 0;
-  transition: opacity .35s;
+  flex-direction: column;
+  padding: 14px 18px 0;
 }
 
-.project-card:hover .project-overlay { opacity:1; }
-
-.project-link {
-  width: 48px; height: 48px;
-  background: var(--accent);
-  color: var(--bg-primary);
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  font-size: 1.1rem;
-  transition: transform .3s;
+.project-info h3 {
+  margin-bottom: 6px;
+  font-size: 1.16rem;
+  font-weight: 700;
+  letter-spacing: -.01em;
 }
 
-.project-link:hover { transform: scale(1.15); }
+.project-info p {
+  margin-bottom: 10px;
+  color: var(--text-secondary);
+  font-size: .86rem;
+  line-height: 1.55;
+}
 
-.project-info { padding: 24px; }
-.project-info h3 { margin-bottom: 8px; font-size: 1.2rem; }
-.project-info p { color: var(--text-secondary); font-size: .92rem; margin-bottom: 14px; }
-
+/* Tech stack as one quiet line */
 .project-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  align-items: center;
+  margin-top: auto;
+  padding: 9px 0 10px;
+  border-top: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-size: .73rem;
+  font-weight: 600;
+  list-style: none;
 }
 
-.project-tags span {
-  padding: 4px 14px;
-  background: var(--bg-secondary);
-  border-radius: 50px;
-  font-size: .78rem;
-  font-weight: 500;
-  color: var(--accent);
-  border: 1px solid var(--border);
-  transition: background .3s, border-color .3s;
+.project-tags li + li::before {
+  content: "/";
+  margin: 0 7px;
+  font-weight: 400;
+  opacity: .5;
 }
 
-.btn.project-repo {
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-size: .88rem;
+.project-kuro .project-info { padding-top: 12px; }
+.project-kuro .project-info h3 { margin-bottom: 4px; }
+.project-kuro .project-info p  { margin-bottom: 4px; }
+
+/* The tech line moves up to make room for the GitHub bar */
+.project-kuro .project-tags {
+  padding: 0 0 6px;
+  border-top: 0;
+}
+
+/* Full width GitHub bar */
+.project-open {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: 10px;
+  height: 46px;
+  padding: 0 18px;
+  background: var(--accent);
+  color: var(--bg-primary);
+  font-size: .95rem;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: background .3s;
+}
+
+/* The rest of the card opens the same link */
+.project-open::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.repo-mark {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+
+.repo-go {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  margin-left: auto;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform .35s ease;
+}
+
+.project-kuro:hover .project-open,
+.project-open:focus-visible { background: var(--accent-hover); }
+
+[data-theme="light"] .project-kuro:hover .project-open,
+[data-theme="light"] .project-open:focus-visible { background: #c42a22; }
+
+.project-open:focus-visible { outline: none; }
+.project-kuro:focus-within { outline: 3px solid var(--accent); outline-offset: 3px; }
+
+@media (hover: hover) and (pointer: fine) {
+  .project-card:hover {
+    --edge: var(--accent);
+    box-shadow: 0 22px 40px -22px rgba(0,0,0,.45);
+  }
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .project-card.visible:hover { transform: translateY(-4px); }
+  .project-card:hover .project-art .back  { transform: translateY(3px); }
+  .project-card:hover .project-art .front { transform: translateY(-4px); }
+  .project-card:hover .project-art .top   { transform: translate(4px,-8px); }
+  .project-card:hover .project-visual img { transform: scale(1.04); }
+  .project-card:hover .repo-go { transform: translate(3px,-3px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card, .project-card * { transition: none !important; }
+  .project-card.reveal { opacity: 1; transform: none; }
+}
+
+@media (max-width: 1099px) {
+  .projects-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .projects-grid > :nth-child(4) { grid-column: span 2; }
+  .projects-grid > :nth-child(5) { grid-column: 2 / span 2; }
+}
+
+@media (max-width: 360px) {
+  .project-open { gap: 8px; padding: 0 14px; font-size: .88rem; }
+}
+
+@media (max-width: 680px) {
+  .projects-grid { grid-template-columns: minmax(0, 1fr); }
+  .projects-grid > :nth-child(n) { grid-column: 1; }
 }
 
 /* ═══════════════════════════════════════════════════
@@ -1308,10 +1439,6 @@ img { max-width:100%; display:block; }
     gap: 12px;
   }
   .hero-socials { justify-content: center; }
-
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
 
   .about-stats { gap: 20px; }
 

@@ -450,4 +450,14 @@
     drawFloatingLines();
   });
 
+  // Project cards: the highlight follows the cursor
+  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    document.querySelectorAll('.project-card').forEach(card => {
+      card.addEventListener('pointermove', e => {
+        const box = card.getBoundingClientRect();
+        card.style.setProperty('--x', `${e.clientX - box.left}px`);
+        card.style.setProperty('--y', `${e.clientY - box.top}px`);
+      }, { passive: true });
+    });
+  }
 })();
