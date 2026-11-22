@@ -870,14 +870,15 @@ img { max-width:100%; display:block; }
 
 .project-card:hover .project-placeholder { transform: scale(1.05); }
 
-.project-screenshot {
+.project-cover {
   width:100%; height:100%;
+  padding: 8px;
   object-fit: contain;
-  background: #fbf3e4; /* same cream as the screenshot */
+  background: #f8f0df; /* same cream as the logo */
   transition: transform .5s;
 }
 
-.project-card:hover .project-screenshot { transform: scale(1.05); }
+.project-card:hover .project-cover { transform: scale(1.05); }
 
 .project-overlay {
   position: absolute;
@@ -926,6 +927,18 @@ img { max-width:100%; display:block; }
   border: 1px solid var(--border);
   transition: background .3s, border-color .3s;
 }
+
+.project-repo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 18px;
+  font-size: .9rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.project-repo:hover { text-decoration: underline; }
 
 /* ═══════════════════════════════════════════════════
    EXPERIENCE (Timeline)
