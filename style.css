@@ -870,6 +870,15 @@ img { max-width:100%; display:block; }
 
 .project-card:hover .project-placeholder { transform: scale(1.05); }
 
+.project-screenshot {
+  width:100%; height:100%;
+  object-fit: contain;
+  background: #fbf3e4; /* same cream as the screenshot */
+  transition: transform .5s;
+}
+
+.project-card:hover .project-screenshot { transform: scale(1.05); }
+
 .project-overlay {
   position: absolute;
   inset: 0;
