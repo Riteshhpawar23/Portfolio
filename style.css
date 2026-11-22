@@ -928,17 +928,11 @@ img { max-width:100%; display:block; }
   transition: background .3s, border-color .3s;
 }
 
-.project-repo {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 18px;
-  font-size: .9rem;
-  font-weight: 600;
-  color: var(--accent);
+.btn.project-repo {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: .88rem;
 }
-
-.project-repo:hover { text-decoration: underline; }
 
 /* ═══════════════════════════════════════════════════
    EXPERIENCE (Timeline)
