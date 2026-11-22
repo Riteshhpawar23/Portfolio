@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+:root,
+[data-theme="light"] {
+  color-scheme: light;
+  --bg: #F6F4EF;
+  --surface: #FFFFFF;
+  --text: #15140F;
+  --muted: #625E56;
+  --line: #E3DFD6;
+  --accent: #B83218;
+  --on-accent: #FFFFFF;
+  --band: #EFEBE3;
+  --texture: rgb(21 20 15 / .095);
+  --grid: rgb(21 20 15 / .055);
+  --glow: rgb(224 103 42 / .24);
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0E0E0C;
+  --surface: #171714;
+  --text: #EFEDE6;
+  --muted: #9A968B;
+  --line: #2A2924;
+  --accent: #FF6A3D;
+  --on-accent: #15140F;
+  --band: #141411;
+  --texture: rgb(239 237 230 / .10);
+  --grid: rgb(239 237 230 / .05);
+  --glow: rgb(255 106 61 / .22);
+}
+
+/* The same tokens as utility classes, so shadcn and 21st.dev style components fit */
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-ink: var(--text);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --font-display: "Instrument Serif", Georgia, serif;
+  --font-sans: "Geist Variable", system-ui, sans-serif;
+  --font-mono: "Geist Mono Variable", ui-monospace, monospace;
+}
+
+:root {
+  --display: "Instrument Serif", Georgia, serif;
+  --sans: "Geist Variable", system-ui, sans-serif;
+  --mono: "Geist Mono Variable", ui-monospace, monospace;
+  --gutter: clamp(16px, 4vw, 48px);
+  --shell: 1180px;
+}
